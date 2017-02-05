@@ -57,7 +57,7 @@ app.put('/quotes', (req, res) => {
   //trabalha com o put request
   db.collection('quotes').findOneAndUpdate(
     {
-      name: 'Alex'
+      name: 'Yoda'
     },
     {
       $set: {
@@ -87,7 +87,7 @@ app.delete('/quotes', (req, res) => {
       if (err) {
         return res.send(500, err);
       }
-      res.send('A darth vader quote got deleted');
+      res.send(results);
     }
   );
 });

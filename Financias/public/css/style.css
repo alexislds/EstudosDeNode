@@ -1,0 +1,41 @@
+.despesas table {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.despesas tfoot {
+  border-top: 1px solid #666;
+}
+
+.despesas tr {
+  width: 100%;
+}
+
+.despesas th {
+  border-bottom: 1px solid #666;
+}
+
+.despesas td {
+  -webkit-transition: background 300ms;
+  transition: background 300ms;
+}
+
+.despesas th,
+.despesas td {
+  color: #666;
+  padding: 16px;
+  text-align: left;
+}
+
+.despesas tbody tr:first-of-type {
+  margin-top: 10px;
+}
+
+.despesas tr:hover td {
+  background: rgba(91, 192, 222, 0.1);
+}
+
+.formulario {
+  margin: 40px auto 0;
+  width: 50%;
+}

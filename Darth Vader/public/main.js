@@ -1,7 +1,9 @@
 var update = document.querySelector('#update');
 var del    = document.querySelector('#delete');
 
-update.addEventListener('click', function(){
+update.addEventListener('click', function(event){
+  event.preventDefault();
+
   fetch('quotes', {
     method: 'put',
     headers: {'Content-Type': 'application/json'},
@@ -16,12 +18,13 @@ update.addEventListener('click', function(){
     }
   })
   .then(data => {
-    console.log(data);
     window.location.reload();
   })
 });
 
-del.addEventListener('click', function(){
+del.addEventListener('click', function(event){
+  event.preventDefault();
+
   fetch('quotes', {
     method: 'delete',
     headers: {'Content-Type': 'application/json'},
@@ -35,7 +38,6 @@ del.addEventListener('click', function(){
     }
   })
   .then(data => {
-    console.log(data);
     window.location.reload();
   })
 });
