@@ -31,11 +31,10 @@ app.get('/', (req, res) => {
     if (err) {
       return console.log(err);
     }
-
-    console.log(results);
-
     res.render('index.ejs', {despesas: results});
+
   })
+
 });;
 
 app.post('/adicionar', (req, res) => {
@@ -46,4 +45,31 @@ app.post('/adicionar', (req, res) => {
 
     res.redirect('/');
   });
+});
+
+app.post('/mudar', (req, res) => {
+  db.collection('despesas').findOneAndUpdate(
+    {
+      nome: req.body.alvo
+    },
+    {
+      $set: {
+      nome: req.body.nome,
+      valor: req.body.valor,
+      categoria: req.body.categoria
+      }
+    },
+    {
+      sort: {_id:1},
+      upsert: true
+    }
+  );
+
+  res.redirect('/');
+});
+
+app.post('/deletar', (req, res) => {
+  db.collection('despesas').remove({nome : req.body.alvo});
+
+  res.redirect('/');
 });

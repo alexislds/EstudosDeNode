@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/import.css">
+  <script src="https://use.fontawesome.com/1597db2c5a.js"></script>
   <title>Financias</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
       <tbody>
         <% for(var i = 0; i < despesas.length; i++) { %>
           <tr class="despesas-lista-item">
-            <td class="despesas-lista-texto despesas-lista-id"><%= i+1 %></td>
+            <td class="despesas-lista-texto despesas-lista-id"><%= despesas[i]._id %></td>
             <td class="despesas-lista-texto despesas-lista-nome"><%= despesas[i].nome %></td>
             <td class="despesas-lista-texto despesas-lista-valor"><%= despesas[i].valor %></td>
             <td class="despesas-lista-texto despesas-lista-categoria"><%= despesas[i].categoria %></td>
@@ -41,6 +42,21 @@
       <input type="number" name="valor" placeholder="Valor">
       <input type="text" name="categoria" placeholder="Categoria">
       <button type="submit">Adicionar</button>
+    </form>
+  </section>
+  <section class="formulario">
+    <form action="/mudar" method="post">
+      <input type="text" name="alvo" placeholder="Nome do Alvo">
+      <input type="text" name="nome" placeholder="Novo Nome">
+      <input type="number" name="valor" placeholder="Novo Valor">
+      <input type="text" name="categoria" placeholder="Nova Categoria">
+      <button type="submit">Mudar</button>
+    </form>
+  </section>
+  <section class="formulario">
+    <form action="/deletar" method="post">
+      <input type="text" name="alvo" placeholder="Nome do Alvo">
+      <button type="submit">Deletar</button>
     </form>
   </section>
   <script src="js/script.js"></script>
