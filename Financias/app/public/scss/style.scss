@@ -1,18 +1,9 @@
-.despesas {
-  table{margin:0 auto; width:50%;}
-  tfoot{border-top:1px solid #666;}
-  tr   {width:100%;}
-  th   {border-bottom:1px solid #666;}
-  td   {transition:background 300ms;}
+.despesas{
+  .table-hover tbody tr:hover td {
+    background: rgba(green, .1);
+  }
 
-  th,
-  td{color:#666; padding:16px; text-align:left;}
-
-  tbody tr:first-of-type{margin-top:10px;}
-
-  tr:hover td{background:rgba(#5bc0de, .1);}
-}
-
-.formulario {
-  margin:40px auto 0; width:50%;
+  .ativo{
+    background:green;
+  }
 }

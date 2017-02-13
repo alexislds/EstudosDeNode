@@ -5,14 +5,14 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function() {
-    return gulp.src('./public/scss/*.scss')
+    return gulp.src('./app/public/scss/*.scss')
         .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(gulp.dest('./public/css'));
+        .pipe(gulp.dest('./app/public/css'));
 });
 gulp.task('default', ['sass'], function() {
     gulp.watch([
-        'public/scss/*.scss'
+        './app/public/scss/*.scss'
     ], function() {
         gulp.run('sass');
     })

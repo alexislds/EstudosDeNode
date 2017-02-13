@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/import.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://use.fontawesome.com/1597db2c5a.js"></script>
+  <link rel="stylesheet" href="css/import.css">
   <title>Financias</title>
 </head>
 <body>
-  <section class="despesas">
-    <table>
+  <section class="despesas container table-responsive">
+    <table class="table table-hover">
       <thead>
         <tr>
-          <th>ID</th>
           <th>Nome</th>
           <th>Valor</th>
           <th>Categoria</th>
@@ -21,43 +21,40 @@
       </thead>
       <tbody>
         <% for(var i = 0; i < despesas.length; i++) { %>
-          <tr class="despesas-lista-item">
-            <td class="despesas-lista-texto despesas-lista-id"><%= despesas[i]._id %></td>
+          <tr class="despesas-lista-item" data-id="<%= despesas[i]._id %>">
             <td class="despesas-lista-texto despesas-lista-nome"><%= despesas[i].nome %></td>
             <td class="despesas-lista-texto despesas-lista-valor"><%= despesas[i].valor %></td>
             <td class="despesas-lista-texto despesas-lista-categoria"><%= despesas[i].categoria %></td>
           </tr>
         <% } %>
       </tbody>
-      <tfoot>
-        <tr>
-          <td id="valorTotal">Valor total:</td>
-        </tr>
-      </tfoot>
     </table>
+    <div id="valorTotal">Valor total:</div>
   </section>
-  <section class="formulario">
-    <form action="/adicionar" method="post">
-      <input type="text" name="nome" placeholder="Nome">
-      <input type="number" name="valor" placeholder="Valor">
-      <input type="text" name="categoria" placeholder="Categoria">
-      <button type="submit">Adicionar</button>
-    </form>
-  </section>
-  <section class="formulario">
-    <form action="/mudar" method="post">
-      <input type="text" name="alvo" placeholder="Nome do Alvo">
-      <input type="text" name="nome" placeholder="Novo Nome">
-      <input type="number" name="valor" placeholder="Novo Valor">
-      <input type="text" name="categoria" placeholder="Nova Categoria">
-      <button type="submit">Mudar</button>
-    </form>
-  </section>
-  <section class="formulario">
-    <form action="/deletar" method="post">
-      <input type="text" name="alvo" placeholder="Nome do Alvo">
-      <button type="submit">Deletar</button>
-    </form>
+  <section class="formulario container">
+    <div class="form-group">
+      <form class="form-inline" action="/adicionar" method="post">
+        <input class="form-control" type="text" name="nome" placeholder="Nome">
+        <input class="form-control" type="number" name="valor" placeholder="Valor">
+        <input class="form-control" type="text" name="categoria" placeholder="Categoria">
+        <button class="btn btn-success" type="submit">Adicionar</button>
+      </form>
+    </div>
+    <div class="form-group">
+      <form class="form-inline" action="/mudar" method="post">
+        <input id="inputMudar" class="form-control" type="hidden" name="alvo">
+        <input class="form-control" type="text" name="nome" placeholder="Novo Nome">
+        <input class="form-control" type="number" name="valor" placeholder="Novo Valor">
+        <input class="form-control" type="text" name="categoria" placeholder="Nova Categoria">
+        <button class="btn btn-success" type="submit">Mudar</button>
+      </form>
+    </div>
+    <div class="form-group">
+      <form class="form-inline" action="/deletar" method="post">
+        <input id="inputExcluir" class="form-control" type="hidden" name="alvo">
+        <button class="btn btn-success" type="submit">Deletar</button>
+      </form>
+    </div>
   </section>
   <script src="js/script.js"></script>
 </body>
