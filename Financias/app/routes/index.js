@@ -1,3 +1,6 @@
+const MongoClient = require('mongodb').MongoClient;
+const ObjectId    = require('mongodb').ObjectId;
+
 module.exports = (app, db) => {
 
   app.get('/', (req, res) => {
@@ -19,7 +22,7 @@ module.exports = (app, db) => {
   app.post('/mudar', (req, res) => {
     db.collection('despesas').findOneAndUpdate(
       {
-        _id: req.body.alvo
+        _id: ObjectId(req.body.alvo)
       },
       {
         $set: {
@@ -39,10 +42,8 @@ module.exports = (app, db) => {
 
   app.post('/deletar', (req, res) => {
 
-    db.collection('despesas').remove({"_id": db.ObjectID(req.body.alvo)});
-    // db.collection('despesas').remove({_id : req.body.alvo});
+    db.collection('despesas').remove({_id: ObjectId(req.body.alvo)});
 
     res.redirect('/');
   });
-
 }

@@ -1,4 +1,3 @@
-// requires das coisas necessarias
 const app          = require('./config/express.js')();
 const database     = require('./app/database/database.js');
 
