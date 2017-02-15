@@ -17,6 +17,7 @@ database.connectDb( (err) => {
   const rotaLogin     = require('./app/routes/login.js')(app, db);
   const rotaCadastro  = require('./app/routes/cadastro.js')(app, db);
   const rotaPerfil    = require('./app/routes/perfil.js')(app, db);
+  const rotaDespesas  = require('./app/routes/despesas.js')(app, db);
 
   app.listen(3000, () => console.log('Server ON...'));
 });

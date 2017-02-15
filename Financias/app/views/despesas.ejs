@@ -36,7 +36,7 @@
   </section>
   <section class="formulario container">
     <div class="form-group">
-      <form class="form-inline" action="/adicionar" method="post">
+      <form class="form-inline" action="/despesas/adicionar" method="post">
         <input class="form-control" type="text" name="nome" placeholder="Nome">
         <input class="form-control" type="number" name="valor" placeholder="Valor">
         <input class="form-control" type="text" name="categoria" placeholder="Categoria">
@@ -44,7 +44,7 @@
       </form>
     </div>
     <div class="form-group">
-      <form class="form-inline" action="/mudar" method="post">
+      <form class="form-inline" action="/despesas/mudar" method="post">
         <input id="inputMudar" class="form-control" type="hidden" name="alvo">
         <input class="form-control" type="text" name="nome" placeholder="Novo Nome">
         <input class="form-control" type="number" name="valor" placeholder="Novo Valor">
@@ -53,7 +53,7 @@
       </form>
     </div>
     <div class="form-group">
-      <form class="form-inline" action="/deletar" method="post">
+      <form class="form-inline" action="/despesas/deletar" method="post">
         <input id="inputExcluir" class="form-control" type="hidden" name="alvo">
         <button class="btn btn-success" type="submit">Deletar</button>
       </form>

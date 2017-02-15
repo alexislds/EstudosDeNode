@@ -6,8 +6,6 @@ module.exports = (app, db) => {
   app.get('/login', (req, res) => {
     let sessionUserId = req.session.userId;
 
-    console.log(sessionUserId);
-
     res.render('login', {sessionId: sessionUserId});
   });
 
@@ -21,13 +19,21 @@ module.exports = (app, db) => {
         console.log(err);
       }
 
-
       if (results.length > 0) {
-          let id = results[0]._id;
-          req.session.userId = id;
+        let id = results[0]._id;
+        req.session.userId = id;
+        res.redirect('/despesas');
       }
 
-      res.redirect('/login');
+      else {
+        res.redirect('/login');
+      }
     });
+  });
+
+  app.get('/login/deslogar', (req, res) => {
+    req.session.destroy();
+
+    res.redirect('/login');
   });
 }

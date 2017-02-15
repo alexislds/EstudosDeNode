@@ -6,8 +6,6 @@ module.exports = (app, db) => {
   app.get('/cadastro', (req, res) => {
     let sessionUserId = req.session.userId;
 
-    console.log('LOGADO ID = ' + req.session.userId);
-
     res.render('cadastro', {sessionId: sessionUserId});
   });
 

@@ -58,6 +58,32 @@ a {
   text-decoration: none;
 }
 
+body {
+  background-color: #C63D0F;
+}
+
+.header {
+  background-color: rgba(0, 0, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 85px;
+}
+
+.header-lista-item {
+  display: inline-block;
+}
+
+.header-lista-link {
+  color: #2196F3;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+}
+
 .despesas .table-hover tbody tr:hover td {
   background: rgba(0, 128, 0, 0.1);
 }

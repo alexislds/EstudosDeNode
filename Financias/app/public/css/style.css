@@ -1,7 +1,0 @@
-.despesas .table-hover tbody tr:hover td {
-  background: rgba(0, 128, 0, 0.1);
-}
-
-.despesas .ativo {
-  background: green;
-}
