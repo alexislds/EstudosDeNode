@@ -10,6 +10,9 @@
   <title>Financias</title>
 </head>
 <body>
+  <% if (sessionId) {%>
+    <div class="alert alert-success">AEEE POHAAA VOCE TA LOGADO</div>
+  <%}%>
   <section class="container cadastro">
     <h1 class="text-center">Tela de cadastro</h1>
     <form action="/cadastro/cadastrar" method="post">

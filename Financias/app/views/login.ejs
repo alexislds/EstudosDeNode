@@ -11,6 +11,9 @@
 </head>
 <body>
   <section class="container login">
+    <% if (sessionId) {%>
+      <div class="alert alert-success">AEEE POHAAA VOCE TA LOGADO</div>
+    <%}%>
     <h1 class="text-center">Tela de Login</h1>
     <form class="form-horizontal" action="/login/logar" method="post">
       <div class="form-group row">
