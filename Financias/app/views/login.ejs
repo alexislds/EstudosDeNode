@@ -10,21 +10,7 @@
   <title>Financias</title>
 </head>
 <body>
-  <header class="header">
-    <ul class="header-lista">
-      <li class="header-lista-item"><a href="/perfil" class="header-lista-link">Meu Perfil</a></li>
-      <li class="header-lista-item"><a href="#" class="header-lista-link">Minha Carteira</a></li>
-      <li class="header-lista-item"><a href="/despesas" class="header-lista-link">Minhas Despesas</a></li>
-      <li class="header-lista-item"><a href="/cadastro" class="header-lista-link">Cadastro</a></li>
-      <li class="header-lista-item"><a href="/login" class="header-lista-link">Login</a></li>
-    </ul>
-    <% if (sessionName) { %>
-      <div class="header-logado">
-        <p class="header-logado-texto">Olá, <%= sessionName %></p>
-        <a href="/login/deslogar" class="header-logado-deslogar">Deslogar</a>
-      </div>
-    <% } %>
-  </header>
+  <%- include('topo'); %>
   <section class="login">
     <div class="limite login-limite">
       <h2 class="login-titulo">Tela de Login</h2>
