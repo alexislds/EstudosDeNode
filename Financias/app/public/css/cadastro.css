@@ -1,3 +1,75 @@
 /* Variaveis */
 /* Mixins */
 /* Media Querys */
+.cadastro {
+  font-family: "Ubuntu", sans-serif;
+  height: calc(100vh - 85px);
+  padding: 40px 0;
+  width: 100%;
+}
+
+.cadastro-limite {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cadastro-titulo {
+  margin-bottom: 40px;
+}
+
+.cadastro-formulario-campo {
+  border: 1px solid #999;
+  border-radius: 5px;
+  color: #111111;
+  display: block;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 10px 8px;
+  width: 400px;
+}
+
+.cadastro-formulario-campo::-webkit-input-placeholder {
+  color: #111111;
+}
+
+.cadastro-formulario-campo::-moz-placeholder {
+  color: #111111;
+}
+
+.cadastro-formulario-campo:-ms-input-placeholder {
+  color: #111111;
+}
+
+.cadastro-formulario-campo::placeholder {
+  color: #111111;
+}
+
+.cadastro-formulario-btn {
+  background: #00C851;
+  border: 1px solid #007E33;
+  border-radius: 3px;
+  color: #fefefe;
+  display: block;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 11px 30px 9px;
+  text-transform: uppercase;
+  -webkit-transition: background 300ms;
+  transition: background 300ms;
+}
+
+.cadastro-formulario-btn:hover {
+  background: #007E33;
+}

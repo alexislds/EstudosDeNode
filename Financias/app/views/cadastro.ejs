@@ -25,16 +25,17 @@
       </div>
     <% } %>
   </header>
-  <section class="limite cadastro">
-    <h1 class="text-center">Tela de cadastro</h1>
-    <form action="/cadastro/cadastrar" method="post">
-      <input type="text" name="nome" placeholder="Nome" required>
-      <input type="text" name="sobrenome" placeholder="Sobrenome" required>
-      <input type="text" name="usuario" placeholder="Digite seu usuario" required>
-      <input type="text" name="senha" placeholder="Digite sua senha" required>
-      <button type="submit">Logar</button>
-    </form>
-
+  <section class="cadastro">
+    <div class="limite cadastro-limite">
+      <h2 class="cadastro-titulo">Tela de cadastro</h2>
+      <form class="cadastro-formulario" action="/cadastro/cadastrar" method="post">
+        <input class="cadastro-formulario-campo" type="text" name="nome" placeholder="Nome" required>
+        <input class="cadastro-formulario-campo" type="text" name="sobrenome" placeholder="Sobrenome" required>
+        <input class="cadastro-formulario-campo" type="text" name="usuario" placeholder="Digite seu usuario" required>
+        <input class="cadastro-formulario-campo" type="text" name="senha" placeholder="Digite sua senha" required>
+        <button class="cadastro-formulario-btn" type="submit">Cadastrar</button>
+      </form>
+    </div>
   </section>
 </body>
 </html>
