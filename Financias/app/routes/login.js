@@ -4,9 +4,9 @@ const ObjectId    = require('mongodb').ObjectId;
 module.exports = (app, db) => {
 
   app.get('/login', (req, res) => {
-    let sessionUserId = req.session.userId;
+    let sessionUserName = req.session.userName;
 
-    res.render('login', {sessionId: sessionUserId});
+    res.render('login', {sessionName: sessionUserName});
   });
 
   app.post('/login/logar', (req, res) => {
@@ -20,8 +20,12 @@ module.exports = (app, db) => {
       }
 
       if (results.length > 0) {
-        let id = results[0]._id;
-        req.session.userId = id;
+
+        req.session.userId = results[0]._id;
+        req.session.userName = results[0].nome;
+
+        console.log(req.session.userId + "  " + req.session.userName);
+
         res.redirect('/despesas');
       }
 

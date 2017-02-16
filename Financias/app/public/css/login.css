@@ -1,0 +1,75 @@
+/* Variaveis */
+/* Mixins */
+/* Media Querys */
+.login {
+  font-family: "Ubuntu", sans-serif;
+  height: calc(100vh - 85px);
+  padding: 40px 0;
+  width: 100%;
+}
+
+.login-limite {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-titulo {
+  margin-bottom: 40px;
+}
+
+.login-formulario-campo {
+  border: 1px solid #999;
+  border-radius: 5px;
+  color: #111111;
+  display: block;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
+  margin-bottom: 20px;
+  padding: 10px 8px;
+  width: 400px;
+}
+
+.login-formulario-campo::-webkit-input-placeholder {
+  color: #111111;
+}
+
+.login-formulario-campo::-moz-placeholder {
+  color: #111111;
+}
+
+.login-formulario-campo:-ms-input-placeholder {
+  color: #111111;
+}
+
+.login-formulario-campo::placeholder {
+  color: #111111;
+}
+
+.login-formulario-btn {
+  background: #00C851;
+  border: 1px solid #007E33;
+  border-radius: 3px;
+  color: #fefefe;
+  display: block;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  -webkit-transition: background 300ms;
+  transition: background 300ms;
+}
+
+.login-formulario-btn:hover {
+  background: #007E33;
+}

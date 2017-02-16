@@ -1,3 +1,87 @@
+/* Variaveis */
+/* Mixins */
+/* Media Querys */
 body {
-  background-color: #C63D0F;
+  background-color: #9099a2;
+}
+
+/* DIV LIMITE */
+@media (max-width: 640px) {
+  .limite {
+    height: 100%;
+    overflow: hidden;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .limite {
+    height: 100%;
+    overflow: hidden;
+    padding: 40px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .limite {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .limite {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1400px;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1921px) {
+  .limite {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1600px;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+/* FONT-SIZE */
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+h1 {
+  font-size: 3.157em;
+}
+
+h2 {
+  font-size: 2.369em;
+}
+
+h3 {
+  font-size: 1.777em;
+}
+
+h4 {
+  font-size: 1.333em;
 }

@@ -1,1 +1,28 @@
-body{background-color:#C63D0F;}
+@import 'utilitarios';
+
+body{background-color:#9099a2;}
+
+/* DIV LIMITE */
+.limite{
+  @include smartphone{height:100%; overflow:hidden; padding:20px; width:100%;}
+  @include tablet{height:100%; overflow:hidden; padding:40px;}
+  @include desktop{height:100%; margin:0 auto; max-width:1000px; overflow:hidden; width:100%;}
+  @include monitor{height:100%; margin:0 auto; max-width:1400px; overflow:hidden; width:100%;}
+  @include ultrawide{height:100%; margin:0 auto; max-width:1600px; overflow:hidden; width:100%;}
+}
+
+/* FONT-SIZE */
+html {
+  font-size: 16px;
+  @media (min-width: 800px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+h1 {font-size: 3.157em;}
+h2 {font-size: 2.369em;}
+h3 {font-size: 1.777em;}
+h4 {font-size: 1.333em;}

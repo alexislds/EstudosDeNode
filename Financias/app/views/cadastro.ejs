@@ -10,10 +10,22 @@
   <title>Financias</title>
 </head>
 <body>
-  <% if (sessionId) {%>
-    <div class="alert alert-success">AEEE POHAAA VOCE TA LOGADO</div>
-  <%}%>
-  <section class="container cadastro">
+  <header class="header">
+    <ul class="header-lista">
+      <li class="header-lista-item"><a href="/perfil" class="header-lista-link">Meu Perfil</a></li>
+      <li class="header-lista-item"><a href="#" class="header-lista-link">Minha Carteira</a></li>
+      <li class="header-lista-item"><a href="/despesas" class="header-lista-link">Minhas Despesas</a></li>
+      <li class="header-lista-item"><a href="/cadastro" class="header-lista-link">Cadastro</a></li>
+      <li class="header-lista-item"><a href="/login" class="header-lista-link">Login</a></li>
+    </ul>
+    <% if (sessionName) { %>
+      <div class="header-logado">
+        <p class="header-logado-texto">Olá, <%= sessionName %></p>
+        <a href="/login/deslogar" class="header-logado-deslogar">Deslogar</a>
+      </div>
+    <% } %>
+  </header>
+  <section class="limite cadastro">
     <h1 class="text-center">Tela de cadastro</h1>
     <form action="/cadastro/cadastrar" method="post">
       <input type="text" name="nome" placeholder="Nome" required>

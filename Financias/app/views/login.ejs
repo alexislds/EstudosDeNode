@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
-  <link rel="stylesheet" href="../public/css/import.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Raleway|Ubuntu+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="css/import.css">
   <title>Financias</title>
 </head>
 <body>
@@ -15,28 +15,25 @@
       <li class="header-lista-item"><a href="/perfil" class="header-lista-link">Meu Perfil</a></li>
       <li class="header-lista-item"><a href="#" class="header-lista-link">Minha Carteira</a></li>
       <li class="header-lista-item"><a href="/despesas" class="header-lista-link">Minhas Despesas</a></li>
-      <li class="header-lista-item"><a href="/cadastro" class="header-lista-link">Cadastrar</a></li>
-      <li class="header-lista-item"><a href="/login" class="header-lista-link">Logar</a></li>
+      <li class="header-lista-item"><a href="/cadastro" class="header-lista-link">Cadastro</a></li>
+      <li class="header-lista-item"><a href="/login" class="header-lista-link">Login</a></li>
     </ul>
+    <% if (sessionName) { %>
+      <div class="header-logado">
+        <p class="header-logado-texto">Olá, <%= sessionName %></p>
+        <a href="/login/deslogar" class="header-logado-deslogar">Deslogar</a>
+      </div>
+    <% } %>
   </header>
-  <section class="container login">
-    <!-- <% if (sessionId) {%> -->
-      <div class="alert alert-success">AEEE POHAAA VOCE TA LOGADO</div>
-      <form action="/login/deslogar" method="get">
-        <button type="submit" class="btn btn-lg btn-success">Deslogar</button>
+  <section class="login">
+    <div class="limite login-limite">
+      <h2 class="login-titulo">Tela de Login</h2>
+      <form class="login-formulario" action="/login/logar" method="post">
+        <input class="login-formulario-campo" type="text" id="inputUsuario" name="usuario" placeholder="Digite seu usuario" required>
+        <input class="login-formulario-campo" type="text" id="inputSenha" name="senha" placeholder="Digite sua senha" required>
+        <button type="submit" class="login-formulario-btn">Logar</button>
       </form>
-    <!-- <%}%> -->
-    <h1 class="text-center">Tela de Login</h1>
-    <form class="form-horizontal" action="/login/logar" method="post">
-      <div class="form-group row">
-        <input class="col-lg-10 form-control input-lg" type="text" id="inputUsuario" name="usuario" placeholder="Digite seu usuario" required>
-      </div>
-      <div class="form-group row">
-        <input class="col-lg-10 form-control input-lg" type="text" id="inputSenha" name="senha" placeholder="Digite sua senha" required>
-      </div>
-      <button type="submit" class="btn btn-lg btn-success center-block">Logar</button>
-    </form>
-
+    </div>
   </section>
 </body>
 </html>

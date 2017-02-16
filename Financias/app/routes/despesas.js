@@ -4,11 +4,11 @@ const ObjectId    = require('mongodb').ObjectId;
 module.exports = (app, db) => {
 
   app.get('/despesas', (req, res) => {
-    let sessionUserId = req.session.userId;
+    let sessionUserName = req.session.userName;
 
     db.collection('despesas').find().toArray((err, results) => {
 
-      res.render('despesas', {despesas: results, sessionId: sessionUserId});
+      res.render('despesas', {despesas: results, sessionName: sessionUserName});
     });
   });
 

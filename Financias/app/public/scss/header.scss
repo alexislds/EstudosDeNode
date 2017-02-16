@@ -1,8 +1,23 @@
+@import 'utilitarios';
+
 .header{
-  background-color:rgba(blue, .2); display:flex; justify-content:center; height:85px;
+  align-items:center; background-color:$branco; display:flex; font-family:$fonteA; font-size:16px; justify-content:center; height:85px;
 
   &-lista{
     &-item{display:inline-block;}
-    &-link{color:#2196F3; font-family:'Open Sans', sans-serif; font-size:20px; font-weight:300;}
+
+    &-link                           {color:#888; display:inline-block;  padding:0 20px; text-decoration:none; transition:color 300ms;}
+    &-link:hover                     {color:#ccc;}
+    &-item:not(:first-of-type) &-link{background:linear-gradient(to bottom, #888, #888) no-repeat left center / 1px 100%; padding-left:21px;}
+  }
+
+  &-logado{
+    margin-left:50px;
+
+    &-texto,
+    &-deslogar{display:inline-block;}
+
+    &-deslogar      {background:linear-gradient(to bottom, $preto, $preto) no-repeat left center / 1px 100%; padding-left:21px; margin-left:20px; transition:color 300ms;}
+    &-deslogar:hover{color:red; text-decoration:none;}
   }
 }

@@ -4,9 +4,9 @@ const ObjectId    = require('mongodb').ObjectId;
 module.exports = (app, db) => {
 
   app.get('/cadastro', (req, res) => {
-    let sessionUserId = req.session.userId;
+    let sessionUserName = req.session.userName;
 
-    res.render('cadastro', {sessionId: sessionUserId});
+    res.render('cadastro', {sessionName: sessionUserName});
   });
 
   app.post('/cadastro/cadastrar', (req, res) => {

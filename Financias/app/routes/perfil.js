@@ -1,5 +1,7 @@
 module.exports = (app) => {
   app.get('/perfil', (req, res) => {
-    res.render('perfil');
+    let sessionUserName = req.session.userName;
+
+    res.render('perfil', {sessionName: sessionUserName});
   });
 }

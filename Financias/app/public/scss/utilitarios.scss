@@ -1,0 +1,68 @@
+/* Variaveis */
+
+$fonteA:'Lato', sans-serif;
+$fonteB:'Ubuntu', sans-serif;
+$corA: #63b6db;
+$corB: #d132a9;
+$corC: #5fce80;
+$corD: #309dcf;
+$branco: #fefefe;
+$preto: #111111;
+$smartphone-width:640px;
+$tablet-width:1024px;
+$desktop-width:1440px;
+$monitor-width:1920px;
+
+
+
+/* Mixins */
+
+@mixin mascara {
+  display:inline-block; height:100%; left:0; position:absolute; top:0; width:100%;
+}
+
+
+
+/* Media Querys */
+
+@mixin smartphone-tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-monitor-ultrawide {
+  @media (min-width: #{$tablet-width} + 1) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphone-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$smartphone-width + 1}) and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$tablet-width + 1}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin monitor {
+  @media (min-width: #{$desktop-width + 1}) and (max-width: #{$monitor-width}) {
+    @content;
+  }
+}
+
+@mixin ultrawide {
+  @media (min-width: #{$monitor-width + 1}) {
+    @content;
+  }
+}
