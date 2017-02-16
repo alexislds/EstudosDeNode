@@ -3,7 +3,7 @@
 .cadastro{
   font-family:$fonteB; height:calc(100vh - 85px); padding:40px 0; width:100%;
 
-  &-limite{align-items:center; display:flex; flex-direction:column; justify-content:center;}
+  &-limite{align-items:center; display:flex; flex-direction:column; justify-content:center; position:relative;}
 
   &-titulo{margin-bottom:40px;}
 
@@ -14,4 +14,6 @@
     &-btn      {background:#00C851; border:1px solid #007E33; border-radius:3px; color:$branco; display:block; font-size:16px; margin:0 auto; padding:11px 30px 9px; text-transform:uppercase; transition:background 300ms;}
     &-btn:hover{background:#007E33;}
   }
+
+  &-erro{background-color:#ff4444; color:$branco; font-size:15px; left:0; padding:20px 10px; position:absolute; top:0; width:100%;}
 }

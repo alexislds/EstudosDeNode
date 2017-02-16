@@ -321,6 +321,7 @@ h4 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 .cadastro-titulo {
@@ -371,4 +372,15 @@ h4 {
 
 .cadastro-formulario-btn:hover {
   background: #007E33;
+}
+
+.cadastro-erro {
+  background-color: #ff4444;
+  color: #fefefe;
+  font-size: 15px;
+  left: 0;
+  padding: 20px 10px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
