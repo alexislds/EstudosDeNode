@@ -16,14 +16,18 @@ module.exports = (app, db) => {
           if (err){
             console.log(err);
           }
+
+          res.redirect('/login');
         });
       }
 
-      if (results.length > 0) {
+      else if (results.length > 0) {
         errorUsuario = "Usuario já cadastrado";
+
+        res.redirect('/cadastro');
       }
 
-      res.redirect('/cadastro');
+
     });
   });
 

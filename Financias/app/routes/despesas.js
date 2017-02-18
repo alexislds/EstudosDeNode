@@ -2,24 +2,30 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectId    = require('mongodb').ObjectId;
 
 module.exports = (app, db) => {
+    let sessionUserName;
+    let sessionUserId;
 
   app.get('/despesas', (req, res) => {
-    let sessionUserName = req.session.userName;
+    sessionUserName = req.session.userName;
+    sessionUserId   = req.session.userId;
 
-    db.collection('despesas').find().toArray((err, results) => {
+    db.collection('usuarios').find({_id : new ObjectId(sessionUserId)}).toArray((err, results) => {
 
-      res.render('despesas', {despesas: results, sessionName: sessionUserName});
+      if (sessionUserId) {
+        var resultados = results[0].despesas;
+
+        res.render('despesas', {usuarioDados: resultados, sessionName: sessionUserName});
+      }
+      else {
+        res.redirect('/login');
+      }
     });
   });
 
   app.post('/despesas/adicionar', (req, res) => {
-    db.collection('despesas').save(req.body, (err, result) => {
-      if (err) {
-        console.log(err);
-      }
+    db.collection("usuarios").findOneAndUpdate({_id : new ObjectId(sessionUserId)},{$push : {despesas : {_id : new ObjectId(), nome : req.body.nome, valor : req.body.valor, categoria : req.body.categoria}}});
 
-      res.redirect('/despesas');
-    });
+    res.redirect('/despesas');
   });
 
   app.post('/despesas/mudar', (req, res) => {

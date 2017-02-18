@@ -24,8 +24,6 @@ module.exports = (app, db) => {
         req.session.userId = results[0]._id;
         req.session.userName = results[0].nome;
 
-        console.log(req.session.userId + "  " + req.session.userName);
-
         res.redirect('/despesas');
       }
 

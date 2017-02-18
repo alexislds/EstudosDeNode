@@ -21,12 +21,14 @@
         </tr>
       </thead>
       <tbody>
-        <% for(var i = 0; i < despesas.length; i++) { %>
-          <tr class="despesas-lista-item" data-id="<%= despesas[i]._id %>">
-            <td class="despesas-lista-texto despesas-lista-nome"><%= despesas[i].nome %></td>
-            <td class="despesas-lista-texto despesas-lista-valor"><%= despesas[i].valor %></td>
-            <td class="despesas-lista-texto despesas-lista-categoria"><%= despesas[i].categoria %></td>
-          </tr>
+        <% if (usuarioDados) { %>
+          <% for(var i = 0; i < usuarioDados.length; i++) { %>
+            <tr class="despesas-lista-item" data-id="<%= usuarioDados[i]._id %>">
+              <td class="despesas-lista-texto despesas-lista-nome"><%= usuarioDados[i].nome %></td>
+              <td class="despesas-lista-texto despesas-lista-valor"><%= usuarioDados[i].valor %></td>
+              <td class="despesas-lista-texto despesas-lista-categoria"><%= usuarioDados[i].categoria %></td>
+            </tr>
+          <% } %>
         <% } %>
       </tbody>
     </table>
