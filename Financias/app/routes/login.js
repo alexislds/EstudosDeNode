@@ -10,7 +10,6 @@ module.exports = (app, db) => {
   });
 
   app.post('/login/logar', (req, res) => {
-
     let usuario = req.body.usuario;
     let senha   = req.body.senha;
 
@@ -20,10 +19,8 @@ module.exports = (app, db) => {
       }
 
       if (results.length > 0) {
-
-        req.session.userId = results[0]._id;
+        req.session.userId   = results[0]._id;
         req.session.userName = results[0].nome;
-
         res.redirect('/despesas');
       }
 
@@ -35,7 +32,6 @@ module.exports = (app, db) => {
 
   app.get('/login/deslogar', (req, res) => {
     req.session.destroy();
-
     res.redirect('/login');
   });
 }
