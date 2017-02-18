@@ -29,9 +29,9 @@ module.exports = (app, db) => {
   });
 
   app.post('/despesas/mudar', (req, res) => {
-    db.collection('despesas').findOneAndUpdate(
+    db.collection('usuarios').findOneAndUpdate(
       {
-        _id: ObjectId(req.body.alvo)
+        _id: new ObjectId(req.body.alvo)
       },
       {
         $set: {
@@ -51,7 +51,18 @@ module.exports = (app, db) => {
 
   app.post('/despesas/deletar', (req, res) => {
 
-    db.collection('despesas').remove({_id: ObjectId(req.body.alvo)});
+    db.collection("usuarios").findOneAndUpdate(
+      {
+        "despesas._id" : new ObjectId(req.body.alvo)
+      },
+      {
+        $pull : {
+          despesas : {
+            _id : new ObjectId(req.body.alvo)
+          }
+        }
+      }
+    );
 
     res.redirect('/despesas');
   });
